@@ -2,14 +2,14 @@
 #include "./ui_qems.h"
 
 QEms::QEms(QWidget *parent)
-    : QMainWindow(parent)
-    , ui(new Ui::QEms)
+	: QMainWindow(parent)
+	  , ui(new Ui::QEms)
 {
-    ui->setupUi(this);
+	ui->setupUi(this);
 }
 
 QEms::~QEms()
 {
-    delete ui;
+	delete ui;
 }
 

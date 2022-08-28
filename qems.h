@@ -9,13 +9,13 @@ QT_END_NAMESPACE
 
 class QEms : public QMainWindow
 {
-    Q_OBJECT
+	Q_OBJECT
 
-public:
-    QEms(QWidget *parent = nullptr);
-    ~QEms();
+  public:
+	QEms(QWidget *parent = nullptr);
+	~QEms();
 
-private:
-    Ui::QEms *ui;
+  private:
+	Ui::QEms *ui;
 };
 #endif // QEMS_H

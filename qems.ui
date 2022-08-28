@@ -71,7 +71,7 @@
    <widget class="QWidget" name="dockWidgetContents">
     <layout class="QVBoxLayout" name="verticalLayout">
      <item>
-      <widget class="QScrollArea" name="scrollArea">
+      <widget class="QScrollArea" name="scrollElems">
        <property name="sizePolicy">
         <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
          <horstretch>0</horstretch>
@@ -80,7 +80,7 @@
        </property>
        <property name="minimumSize">
         <size>
-         <width>140</width>
+         <width>200</width>
          <height>0</height>
         </size>
        </property>
@@ -92,17 +92,13 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>138</width>
+          <width>198</width>
           <height>522</height>
          </rect>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_2">
          <item>
-          <widget class="QPushButton" name="pushButton">
-           <property name="text">
-            <string>PushButton</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="ElemsVerticalLayout"/>
          </item>
          <item>
           <spacer name="verticalSpacer">
@@ -146,7 +142,7 @@
        </property>
        <property name="minimumSize">
         <size>
-         <width>140</width>
+         <width>200</width>
          <height>0</height>
         </size>
        </property>
@@ -158,17 +154,13 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>138</width>
+          <width>198</width>
           <height>241</height>
          </rect>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_3">
          <item>
-          <widget class="QPushButton" name="pushButton_2">
-           <property name="text">
-            <string>PushButton</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="ElemMapVerticalLayout"/>
          </item>
          <item>
           <spacer name="verticalSpacer_2">
@@ -212,7 +204,7 @@
        </property>
        <property name="minimumSize">
         <size>
-         <width>140</width>
+         <width>200</width>
          <height>0</height>
         </size>
        </property>
@@ -224,17 +216,13 @@
          <rect>
           <x>0</x>
           <y>0</y>
-          <width>138</width>
+          <width>198</width>
           <height>241</height>
          </rect>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_5">
          <item>
-          <widget class="QPushButton" name="pushButton_3">
-           <property name="text">
-            <string>PushButton</string>
-           </property>
-          </widget>
+          <layout class="QVBoxLayout" name="PropertiesVerticalLayout"/>
          </item>
          <item>
           <spacer name="verticalSpacer_3">
