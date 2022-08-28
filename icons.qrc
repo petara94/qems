@@ -6,5 +6,6 @@
         <file>res/icons/save_as.png</file>
         <file>res/icons/start.png</file>
         <file>res/icons/stop.png</file>
+        <file>res/icons/box.png</file>
     </qresource>
 </RCC>

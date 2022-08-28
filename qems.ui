@@ -10,6 +10,13 @@
     <height>650</height>
    </rect>
   </property>
+  <property name="palette">
+   <palette>
+    <active/>
+    <inactive/>
+    <disabled/>
+   </palette>
+  </property>
   <property name="windowTitle">
    <string>QEms</string>
   </property>
@@ -98,7 +105,11 @@
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_2">
          <item>
-          <layout class="QVBoxLayout" name="ElemsVerticalLayout"/>
+          <layout class="QVBoxLayout" name="ElemsVerticalLayout">
+           <property name="spacing">
+            <number>1</number>
+           </property>
+          </layout>
          </item>
          <item>
           <spacer name="verticalSpacer">
