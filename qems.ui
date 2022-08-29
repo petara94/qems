@@ -39,7 +39,7 @@
       <widget class="QWidget" name="tab">
        <attribute name="icon">
         <iconset>
-         <normaloff>:/res/icons/res/icons/g_edit.png</normaloff>:/res/icons/res/icons/g_edit.png</iconset>
+         <normaloff>:/res/icons/g_edit.png</normaloff>:/res/icons/g_edit.png</iconset>
        </attribute>
        <attribute name="title">
         <string>Редактор</string>
