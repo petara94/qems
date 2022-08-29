@@ -38,7 +38,7 @@
       </property>
       <widget class="QWidget" name="tab">
        <attribute name="icon">
-        <iconset resource="icons.qrc">
+        <iconset>
          <normaloff>:/res/icons/res/icons/g_edit.png</normaloff>:/res/icons/res/icons/g_edit.png</iconset>
        </attribute>
        <attribute name="title">
@@ -305,7 +305,7 @@
   <action name="create">
    <property name="icon">
     <iconset resource="icons.qrc">
-     <normaloff>:/res/icons/res/icons/new_file.png</normaloff>:/res/icons/res/icons/new_file.png</iconset>
+     <normaloff>:/res/icons/new_file.png</normaloff>:/res/icons/new_file.png</iconset>
    </property>
    <property name="text">
     <string>Создать проект</string>
@@ -314,7 +314,7 @@
   <action name="save">
    <property name="icon">
     <iconset resource="icons.qrc">
-     <normaloff>:/res/icons/res/icons/save.png</normaloff>:/res/icons/res/icons/save.png</iconset>
+     <normaloff>:/res/icons/save.png</normaloff>:/res/icons/save.png</iconset>
    </property>
    <property name="text">
     <string>Сохранить</string>
@@ -326,7 +326,7 @@
   <action name="save_as">
    <property name="icon">
     <iconset resource="icons.qrc">
-     <normaloff>:/res/icons/res/icons/save_as.png</normaloff>:/res/icons/res/icons/save_as.png</iconset>
+     <normaloff>:/res/icons/save_as.png</normaloff>:/res/icons/save_as.png</iconset>
    </property>
    <property name="text">
     <string>Сохранить как</string>
@@ -338,25 +338,25 @@
   <action name="start">
    <property name="icon">
     <iconset resource="icons.qrc">
-     <normaloff>:/res/icons/res/icons/start.png</normaloff>:/res/icons/res/icons/start.png</iconset>
+     <normaloff>:/res/icons/start.png</normaloff>:/res/icons/start.png</iconset>
    </property>
    <property name="text">
     <string>Начать</string>
    </property>
    <property name="shortcut">
-    <string>Ctrl+Return</string>
+    <string>F10</string>
    </property>
   </action>
   <action name="action">
    <property name="icon">
     <iconset resource="icons.qrc">
-     <normaloff>:/res/icons/res/icons/stop.png</normaloff>:/res/icons/res/icons/stop.png</iconset>
+     <normaloff>:/res/icons/stop.png</normaloff>:/res/icons/stop.png</iconset>
    </property>
    <property name="text">
     <string>Остановить</string>
    </property>
    <property name="shortcut">
-    <string>Ctrl+Backspace</string>
+    <string>Esc</string>
    </property>
   </action>
  </widget>

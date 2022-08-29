@@ -1,5 +1,5 @@
 <RCC>
-    <qresource prefix="/res/icons">
+    <qresource prefix="/">
         <file>res/icons/g_edit.png</file>
         <file>res/icons/new_file.png</file>
         <file>res/icons/save.png</file>

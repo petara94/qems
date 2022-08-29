@@ -13,7 +13,7 @@
 #include <QDebug>
 #include <QMessageBox>
 
-#define BASE_ELEM_IMAGE_PATH ":/res/ifcons/res/icons/box.png"
+#define BASE_ELEM_IMAGE_PATH ":/res/icons/box.png"
 #define BASE_ELEM_IMAGE_WIDTH 50
 #define BASE_ELEM_IMAGE_HEIGHT 50
 
