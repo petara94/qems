@@ -13,6 +13,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 if (APPLE)
     set(CMAKE_PREFIX_PATH "/Users/user/Qt/6.3.1/macos")
+elseif (UNIX)
+    set(CMAKE_PREFIX_PATH "/opt/Qt/6.3.1/gcc_64")
 endif ()
 
 
@@ -23,7 +25,7 @@ set(PROJECT_SOURCES
         qems.ui
         icons.qrc
         elemitem/elemitem.h elemitem/elemitem.cpp
-        )
+        render/GLRender.cpp render/GLRender.h)
 
 add_executable(qems ${PROJECT_SOURCES})
 
