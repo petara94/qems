@@ -39,13 +39,9 @@ private:
 
 signals:
 
-
 protected:
-
-
-protected:
-    void enterEvent(QEvent *event) override;
-    void leaveEvent(QEvent *event) override;
+    void enterEvent(QEnterEvent *event);
+    void leaveEvent(QEvent *event);
 };
 
 #endif // ELEMITEM_H

@@ -43,13 +43,13 @@ ElemItem::ElemItem(QWidget *parent)
 	_vert_layout = new QHBoxLayout(_mainFrame);
 	_vert_layout->addWidget(_img_label);
 	_vert_layout->addWidget(_line);
-	_vert_layout->addWidget(_elem_name);
-	_vert_layout->setMargin(0);
+    _vert_layout->addWidget(_elem_name);
+    _vert_layout->setContentsMargins(QMargins(0,0,0,0));
 	_vert_layout->setSpacing(0);
 
 	_main_layout = new QHBoxLayout(this);
-	_main_layout->addWidget(this->_mainFrame);
-	_main_layout->setMargin(0);
+    _main_layout->addWidget(this->_mainFrame);
+    _main_layout->setContentsMargins(QMargins(0,0,0,0));
 	_main_layout->setSpacing(0);
 }
 
@@ -82,7 +82,7 @@ ElemItem::ElemItem(const QString &name, const QString &filename) : ElemItem(name
 					.scaled(BASE_ELEM_IMAGE_WIDTH, BASE_ELEM_IMAGE_HEIGHT, Qt::KeepAspectRatio));
 }
 
-void ElemItem::enterEvent(QEvent *event) {
+void ElemItem::enterEvent(QEnterEvent *event) {
 	this->setStyleSheet("background-color: rgba(0, 0, 0, 100);");
 	_line->setStyleSheet("border: 1px solid rgba(255, 255, 255, 100);");
 	_elem_name->setStyleSheet("color: white;");
