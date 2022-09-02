@@ -25,7 +25,8 @@ set(PROJECT_SOURCES
         qems.ui
         icons.qrc
         elemitem/elemitem.h elemitem/elemitem.cpp
-        render/GLRender.cpp render/GLRender.h)
+        render/glrender.h render/glrender.cpp
+        )
 
 add_executable(qems ${PROJECT_SOURCES})
 
