@@ -26,6 +26,8 @@ set(PROJECT_SOURCES
         icons.qrc
         elemitem/elemitem.h elemitem/elemitem.cpp
         render/glrender.h render/glrender.cpp
+        g_items/emsitem.h g_items/emsitem.cpp
+        g_items/editorview.h g_items/editorview.cpp
         )
 
 add_executable(qems ${PROJECT_SOURCES})

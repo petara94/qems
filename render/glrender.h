@@ -3,20 +3,19 @@
 
 #include <QOpenGLWidget>
 
-class GLRender : public QOpenGLWidget
-{
+class GLRender : public QOpenGLWidget {
 private:
     int _w, _h;
 
 public:
-    [[maybe_unused]] explicit GLRender(QWidget* parent = nullptr);
-
-
+    explicit GLRender(QWidget *parent = nullptr);
 
     // QOpenGLWidget interface
 protected:
     void initializeGL() override;
+
     void resizeGL(int w, int h) override;
+
     void paintGL() override;
 
 };

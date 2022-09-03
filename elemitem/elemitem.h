@@ -16,32 +16,34 @@
 #define BASE_ELEM_IMAGE_PATH ":/res/icons/box.png"
 #define BASE_ELEM_IMAGE_WIDTH 50
 #define BASE_ELEM_IMAGE_HEIGHT 50
+#define RIGHT_MARGIN_HOVER 20
 
 class ElemItem : public QWidget {
 Q_OBJECT
 public:
-	explicit ElemItem(QWidget *parent = nullptr);
+    explicit ElemItem(QWidget *parent = nullptr);
 
-	ElemItem(const QString &name);
+    ElemItem(const QString &name);
 
-	ElemItem(const QString &name, const QString &filename);
+    ElemItem(const QString &name, const QString &filename);
 
-	virtual ~ElemItem();
+    virtual ~ElemItem();
 
 private:
-	QFrame *_mainFrame;
-	QImage *_img;
-	QLabel *_img_label;
-	QLabel *_elem_name;
-	QFrame *_line;
-	QHBoxLayout *_vert_layout;
-	QHBoxLayout *_main_layout;
+    QFrame *_mainFrame;
+    QImage *_img;
+    QLabel *_img_label;
+    QLabel *_elem_name;
+    QFrame *_line;
+    QHBoxLayout *_vert_layout;
+    QHBoxLayout *_main_layout;
 
 signals:
 
 protected:
-    void enterEvent(QEnterEvent *event);
-    void leaveEvent(QEvent *event);
+    void enterEvent(QEnterEvent *event) override;
+
+    void leaveEvent(QEvent *event) override;
 };
 
 #endif // ELEMITEM_H
