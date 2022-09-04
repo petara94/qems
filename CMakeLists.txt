@@ -33,7 +33,15 @@ set(PROJECT_SOURCES
 add_executable(qems ${PROJECT_SOURCES})
 
 find_package(Qt6 COMPONENTS Widgets OpenGL OpenGLWidgets REQUIRED)
-target_link_libraries(qems PRIVATE Qt6::Widgets Qt6::OpenGL Qt6::OpenGLWidgets)
+
+if (WIN32)
+    find_package(OpenGL REQUIRED)
+    include_directories(${OPENGL_INCLUDE_DIRS})
+    target_link_libraries(qems PRIVATE Qt6::Widgets Qt6::OpenGL Qt6::OpenGLWidgets ${OPENGL_LIBRARIES})
+else ()
+    target_link_libraries(qems PRIVATE Qt6::Widgets Qt6::OpenGL Qt6::OpenGLWidgets)
+endif ()
+
 
 set_target_properties(qems PROPERTIES
         MACOSX_BUNDLE_GUI_IDENTIFIER my.example.com
