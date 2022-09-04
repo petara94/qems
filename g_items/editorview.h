@@ -6,6 +6,7 @@
 #include "emsitem.h"
 
 class EditorView : public QGraphicsView {
+Q_OBJECT
 private:
     EMSItem *_item;
     QGraphicsScene *_scene;

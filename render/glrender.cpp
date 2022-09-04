@@ -1,6 +1,5 @@
 #include "glrender.h"
 
-#include <QDebug>
 #include <QOpenGLFunctions>
 
 
