@@ -7,6 +7,5 @@
         <file>res/icons/start.png</file>
         <file>res/icons/stop.png</file>
         <file>res/icons/box.png</file>
-        <file>res/style/dark.qss</file>
     </qresource>
 </RCC>
