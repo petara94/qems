@@ -15,8 +15,6 @@ public:
     explicit EditorView(QWidget *parent = nullptr);
 
 protected:
-    void wheelEvent(QWheelEvent *event) override;
-
     void resizeEvent(QResizeEvent *event) override;
 };
 
