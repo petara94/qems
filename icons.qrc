@@ -7,5 +7,13 @@
         <file>res/icons/start.png</file>
         <file>res/icons/stop.png</file>
         <file>res/icons/box.png</file>
+        <file>res/fonts/helvetica_bold.otf</file>
+        <file>res/fonts/helvetica_boldoblique.otf</file>
+        <file>res/fonts/helvetica_cyr_boldoblique.ttf</file>
+        <file>res/fonts/helvetica_cyr_oblique.ttf</file>
+        <file>res/fonts/helvetica_light.otf</file>
+        <file>res/fonts/helvetica_lightoblique.otf</file>
+        <file>res/fonts/helvetica_oblique.otf</file>
+        <file>res/fonts/helvetica_regular.otf</file>
     </qresource>
 </RCC>
