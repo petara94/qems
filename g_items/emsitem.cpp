@@ -6,11 +6,14 @@
 #include <QCursor>
 #include <QDebug>
 #include <QGraphicsSceneMouseEvent>
+#include <QGraphicsSceneHoverEvent>
 
 EMSItem::EMSItem(QGraphicsItem *parent) : QGraphicsItem(parent) {
     _w = 100;
     _h = 100;
     color = Qt::red;
+
+    setAcceptHoverEvents(true);
 }
 
 EMSItem::EMSItem(int w, int h) : EMSItem() {
@@ -19,15 +22,28 @@ EMSItem::EMSItem(int w, int h) : EMSItem() {
 }
 
 void EMSItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) {
+    if (hovered) {
+        painter->setBrush(Qt::transparent);
+        painter->setPen(Qt::PenStyle::DashLine);
+        painter->drawRect(0 - EMS_ITEM_MARGIN,
+                          0 - EMS_ITEM_MARGIN,
+                          _w + EMS_ITEM_MARGIN * 2,
+                          _h + EMS_ITEM_MARGIN * 2);
+
+        painter->setBrush(Qt::black);
+        painter->drawText(0, -10, "123");
+    }
+
     painter->setBrush(color);
+    painter->setPen(Qt::black);
     painter->drawEllipse(0, 0, _w, _h);
 }
 
 QRectF EMSItem::boundingRect() const {
-    return QRectF(0,
-                  0,
-                  _w,
-                  _h);
+    return QRectF(0 - EMS_ITEM_MARGIN,
+                  0 - EMS_ITEM_MARGIN,
+                  _w + EMS_ITEM_MARGIN * 2,
+                  _h + EMS_ITEM_MARGIN * 2);
 }
 
 void EMSItem::mousePressEvent(QGraphicsSceneMouseEvent *event) {
@@ -46,11 +62,10 @@ void EMSItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event) {
             pos.setX(0);
         if (pos.y() < 0)
             pos.setY(0);
-        if (pos.x() + _h > scene()->width())
-            pos.setX(scene()->width() - _w);
-        if (pos.y() + _h > scene()->height())
-            pos.setY(scene()->height() - _h);
-        this->setPos(pos);
+        if (pos.x() + this->scale() * _w > scene()->width())
+            pos.setX(scene()->width() - this->scale() * _w);
+        if (pos.y() + this->scale() * _h > scene()->height())
+            pos.setY(scene()->height() - this->scale() * _h);
         this->setPos(pos);
 
         update(boundingRect());
@@ -69,4 +84,22 @@ void EMSItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event) {
 
 EMSItem::~EMSItem() {
 
+}
+
+void EMSItem::hoverEnterEvent(QGraphicsSceneHoverEvent *event) {
+    hovered = true;
+    color = Qt::green;
+    setCursor(Qt::CursorShape::PointingHandCursor);
+    update(boundingRect());
+}
+
+void EMSItem::hoverLeaveEvent(QGraphicsSceneHoverEvent *event) {
+    hovered = false;
+    color = Qt::red;
+    setCursor(QCursor(Qt::ArrowCursor));
+    update(boundingRect());
+}
+
+void EMSItem::hoverMoveEvent(QGraphicsSceneHoverEvent *event) {
+    setCursor(Qt::CursorShape::PointingHandCursor);
 }
