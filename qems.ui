@@ -65,9 +65,6 @@
           <property name="horizontalScrollBarPolicy">
            <enum>Qt::ScrollBarAlwaysOff</enum>
           </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
           <property name="renderHints">
            <set>QPainter::Antialiasing|QPainter::TextAntialiasing</set>
           </property>
@@ -143,7 +140,7 @@
           <x>0</x>
           <y>0</y>
           <width>198</width>
-          <height>509</height>
+          <height>522</height>
          </rect>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_2">
@@ -209,7 +206,7 @@
           <x>0</x>
           <y>0</y>
           <width>198</width>
-          <height>230</height>
+          <height>241</height>
          </rect>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_3">
@@ -271,7 +268,7 @@
           <x>0</x>
           <y>0</y>
           <width>198</width>
-          <height>230</height>
+          <height>241</height>
          </rect>
         </property>
         <layout class="QVBoxLayout" name="verticalLayout_5">
@@ -332,7 +329,7 @@
      <x>0</x>
      <y>0</y>
      <width>1100</width>
-     <height>24</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu">

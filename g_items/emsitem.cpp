@@ -2,6 +2,8 @@
 
 #include <QPainter>
 #include <QTimer>
+#include <QGraphicsScene>
+#include <QCursor>
 #include <QDebug>
 #include <QGraphicsSceneMouseEvent>
 
@@ -18,44 +20,51 @@ EMSItem::EMSItem(int w, int h) : EMSItem() {
 
 void EMSItem::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget) {
     painter->setBrush(color);
-    painter->drawEllipse(int(x()), int(y()), _w, _h);
+    painter->drawEllipse(0, 0, _w, _h);
 }
 
 QRectF EMSItem::boundingRect() const {
-    return QRectF(x() - EMS_ITEM_MARGIN,
-                  y() - EMS_ITEM_MARGIN,
-                  _w + EMS_ITEM_MARGIN,
-                  _h + EMS_ITEM_MARGIN);
+    return QRectF(0,
+                  0,
+                  _w,
+                  _h);
 }
 
 void EMSItem::mousePressEvent(QGraphicsSceneMouseEvent *event) {
-    qDebug() << event->pos().x() << event->pos().y() << " | "
-             << event->scenePos().x() << event->scenePos().y() << " | "
-             << event->buttonDownPos(Qt::MouseButton::LeftButton).x() << " | "
-             << event->buttonDownPos(Qt::MouseButton::LeftButton).y();
-    if (event->button() == Qt::MouseButton::LeftButton) {
+    if (event->buttons().testFlag(Qt::LeftButton)) {
         color = Qt::blue;
+        this->setCursor(QCursor(Qt::ClosedHandCursor));
         update(boundingRect());
     }
+    Q_UNUSED(event);
 }
 
 void EMSItem::mouseMoveEvent(QGraphicsSceneMouseEvent *event) {
-    qDebug() << event->button();
-    if (event->button() == Qt::MouseButton::LeftButton) {
-//        qDebug() << event->pos().x() << event->pos().y() << " | "
-//                  << event->scenePos().x() << event->scenePos().y() << " | " << std::endl;
-//                 << event->buttonDownPos(Qt::MouseButton::LeftButton).x() << " | "
-//                 << event->buttonDownPos(Qt::MouseButton::LeftButton).y();
-        setPos(event->pos());
+    if (event->buttons().testFlag(Qt::LeftButton)) {
+        auto pos = mapToScene(event->pos()) - event->buttonDownPos(Qt::LeftButton);
+        if (pos.x() < 0)
+            pos.setX(0);
+        if (pos.y() < 0)
+            pos.setY(0);
+        if (pos.x() + _h > scene()->width())
+            pos.setX(scene()->width() - _w);
+        if (pos.y() + _h > scene()->height())
+            pos.setY(scene()->height() - _h);
+        this->setPos(pos);
+        this->setPos(pos);
+
         update(boundingRect());
     }
+    Q_UNUSED(event);
 }
 
 void EMSItem::mouseReleaseEvent(QGraphicsSceneMouseEvent *event) {
-    if (event->button() == Qt::MouseButton::LeftButton) {
+    if (event->button() == Qt::LeftButton) {
         color = Qt::red;
+        this->setCursor(QCursor(Qt::ArrowCursor));
         update(boundingRect());
     }
+    Q_UNUSED(event);
 }
 
 EMSItem::~EMSItem() {

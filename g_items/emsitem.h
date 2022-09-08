@@ -28,6 +28,8 @@ public:
 
     void mouseReleaseEvent(QGraphicsSceneMouseEvent *event) override;
 
+
+
     QRectF boundingRect() const override;
 
 };
