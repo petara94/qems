@@ -14,8 +14,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 if (APPLE)
     set(CMAKE_PREFIX_PATH "/Users/user/Qt/6.3.1/macos")
 elseif (UNIX)
-    set(CMAKE_PREFIX_PATH "/opt/Qt/6.3.1/gcc_64")
-endif ()
+    set(CMAKE_PREFIX_PATH "/opt/Qt/6.3.2/gcc_64")
+endif ()    
 
 
 set(PROJECT_SOURCES
@@ -32,7 +32,8 @@ set(PROJECT_SOURCES
 
 add_executable(qems ${PROJECT_SOURCES})
 
-find_package(Qt6 COMPONENTS Widgets OpenGL OpenGLWidgets REQUIRED)
+find_package(Qt6 REQUIRED COMPONENTS Widgets OpenGL OpenGLWidgets)
+qt_standard_project_setup()
 
 if (WIN32)
     find_package(OpenGL REQUIRED)
