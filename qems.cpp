@@ -11,6 +11,8 @@ QEms::QEms(QWidget *parent)
 
     for (int i = 0; i < 20; ++i)
         ui->ElemsVerticalLayout->addWidget(new ElemItem(QString::fromStdString("ElemItem: " + std::to_string(i))));
+
+    this->setWindowState(Qt::WindowMaximized);
 }
 
 QEms::~QEms() {
