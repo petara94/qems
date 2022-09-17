@@ -69,8 +69,6 @@ ElemItem::ElemItem(const QString &name) : ElemItem() {
 }
 
 ElemItem::ElemItem(const QString &name, const QString &filename) : ElemItem(name) {
-    delete _img;
-
     _img = new QImage(filename);
 
     if (_img->isNull()) {
@@ -89,4 +87,25 @@ void ElemItem::enterEvent(QEnterEvent *event) {
 
 void ElemItem::leaveEvent(QEvent *event) {
     this->setContentsMargins(0, 0, RIGHT_MARGIN_HOVER, 0);
+}
+
+void ElemItem::mousePressEvent(QMouseEvent *event) {
+    if (event->button() == Qt::LeftButton) {
+        auto *drag = new QDrag(this);
+
+        auto *mimeData = new QMimeData();
+        mimeData->setProperty("width", "50");
+        mimeData->setProperty("height", "100");
+
+        drag->setMimeData(mimeData);
+        drag->exec();
+
+        Qt::DropAction result = drag->exec(Qt::MoveAction);
+        qDebug() << "Drop action result: " << result;
+        if (result == Qt::MoveAction) {
+        }
+    }
+}
+
+void ElemItem::mouseReleaseEvent(QMouseEvent *event) {
 }

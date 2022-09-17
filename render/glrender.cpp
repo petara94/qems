@@ -1,6 +1,6 @@
 #include "glrender.h"
 
-#include <QOpenGLFunctions>
+#include <QOpenGLFunctions_4_5_Core>
 
 
 [[maybe_unused]]

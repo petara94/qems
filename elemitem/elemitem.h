@@ -11,7 +11,11 @@
 #include <QFrame>
 #include <QStyle>
 #include <QDebug>
+#include <QDrag>
+#include <QMimeData>
 #include <QMessageBox>
+#include <QMouseEvent>
+#include <QDragMoveEvent>
 
 #define BASE_ELEM_IMAGE_PATH ":/res/icons/box.png"
 #define BASE_ELEM_IMAGE_WIDTH 50
@@ -44,6 +48,10 @@ protected:
     void enterEvent(QEnterEvent *event) override;
 
     void leaveEvent(QEvent *event) override;
+
+    void mousePressEvent(QMouseEvent *event) override;
+
+    void mouseReleaseEvent(QMouseEvent *event) override;
 };
 
 #endif // ELEMITEM_H

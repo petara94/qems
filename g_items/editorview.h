@@ -16,6 +16,14 @@ public:
 
 protected:
     void resizeEvent(QResizeEvent *event) override;
+
+    void dragEnterEvent(QDragEnterEvent *event) override;
+
+    void dragLeaveEvent(QDragLeaveEvent *event) override;
+
+    void dragMoveEvent(QDragMoveEvent *event) override;
+
+    void dropEvent(QDropEvent *event) override;
 };
 
 #endif // EDITORVIEW_H

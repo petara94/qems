@@ -12,7 +12,6 @@ private:
     int _h;
     Qt::GlobalColor color;
 
-
 public:
     explicit EMSItem(QGraphicsItem *parent = nullptr);
 
@@ -36,7 +35,6 @@ protected:
     void hoverMoveEvent(QGraphicsSceneHoverEvent *event) override;
 
 public:
-
     QRectF boundingRect() const override;
 
 };
