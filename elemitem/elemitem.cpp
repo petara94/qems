@@ -98,7 +98,6 @@ void ElemItem::mousePressEvent(QMouseEvent *event) {
         mimeData->setProperty("height", "100");
 
         drag->setMimeData(mimeData);
-        drag->exec();
 
         Qt::DropAction result = drag->exec(Qt::MoveAction);
         qDebug() << "Drop action result: " << result;
